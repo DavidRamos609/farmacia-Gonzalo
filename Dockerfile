@@ -1,3 +1,4 @@
+# Dockerfile optimizado para producción - Farmacia López Asiain
 FROM nginx:alpine
 
 # Instalar curl para el healthcheck
