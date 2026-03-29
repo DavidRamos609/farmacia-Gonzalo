@@ -1,0 +1,102 @@
+[
+    {
+        "id": "M001",
+        "nombre": "Ibuprofeno 600mg",
+        "categoria": "Analgésicos",
+        "stock": 45,
+        "stock_minimo": 10,
+        "stock_maximo": 60,
+        "precio_euro": 2.50,
+        "descripcion": "Tratamiento del dolor y fiebre."
+    },
+    {
+        "id": "M002",
+        "nombre": "Paracetamol 1g",
+        "categoria": "Analgésicos",
+        "stock": 50,
+        "stock_minimo": 15,
+        "stock_maximo": 70,
+        "precio_euro": 3.10,
+        "descripcion": "Alivio del dolor moderado."
+    },
+    {
+        "id": "M003",
+        "nombre": "Amoxicilina 500mg",
+        "categoria": "Antibióticos",
+        "stock": 12,
+        "stock_minimo": 8,
+        "stock_maximo": 40,
+        "precio_euro": 5.40,
+        "descripcion": "Infecciones bacterianas."
+    },
+    {
+        "id": "M004",
+        "nombre": "Omeprazol 20mg",
+        "categoria": "Protector Gástrico",
+        "stock": 30,
+        "stock_minimo": 10,
+        "stock_maximo": 50,
+        "precio_euro": 4.25,
+        "descripcion": "Acidez estomacal."
+    },
+    {
+        "id": "M005",
+        "nombre": "Loratadina 10mg",
+        "categoria": "Antihistamínicos",
+        "stock": 25,
+        "stock_minimo": 5,
+        "stock_maximo": 30,
+        "precio_euro": 6.80,
+        "descripcion": "Alergia estacional."
+    },
+    {
+        "id": "M006",
+        "nombre": "Simvastatina 20mg",
+        "categoria": "Colesterol",
+        "stock": 18,
+        "stock_minimo": 6,
+        "stock_maximo": 40,
+        "precio_euro": 8.90,
+        "descripcion": "Reducción de lípidos."
+    },
+    {
+        "id": "M007",
+        "nombre": "Metformina 850mg",
+        "categoria": "Diabetes",
+        "stock": 22,
+        "stock_minimo": 10,
+        "stock_maximo": 50,
+        "precio_euro": 2.95,
+        "descripcion": "Control de glucemia."
+    },
+    {
+        "id": "M008",
+        "nombre": "Enalapril 10mg",
+        "categoria": "Hipertensión",
+        "stock": 15,
+        "stock_minimo": 5,
+        "stock_maximo": 30,
+        "precio_euro": 3.40,
+        "descripcion": "Presión arterial."
+    },
+    {
+        "id": "M009",
+        "nombre": "Ventolin Inhalador",
+        "categoria": "Asma",
+        "stock": 8,
+        "stock_minimo": 5,
+        "stock_maximo": 20,
+        "precio_euro": 12.50,
+        "descripcion": "Broncodilatador."
+    },
+    {
+        "id": "M010",
+        "nombre": "Eucerin Crema Facial",
+        "categoria": "Dermocosmética",
+        "stock": 5,
+        "stock_minimo": 3,
+        "stock_maximo": 15,
+        "precio_euro": 24.95,
+        "descripcion": "Hidratación profunda."
+    }
+]

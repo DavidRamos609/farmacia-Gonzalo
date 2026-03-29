@@ -1,0 +1,27 @@
+# ⚠️ CRÍTICO: Nunca subir secretos
+.env
+.env.local
+.env.production
+.env.development
+*.pem
+*.key
+*.crt
+
+# Dependencias
+node_modules/
+
+# Cache
+.cache/
+
+# Logs
+*.log
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo

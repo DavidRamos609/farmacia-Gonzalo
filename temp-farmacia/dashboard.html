@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | López Asiain Castaño</title>
+    <link rel="stylesheet" href="dashboard_style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="logo">López Asiain</div>
+        <ul class="sidebar-nav">
+            <li><a href="#" class="active">📊 Panel General</a></li>
+            <li><a href="#">🧪 Fórmulas Magistrales</a></li>
+            <li><a href="#">📅 Agenda de Citas</a></li>
+            <li><a href="#pedidos">🛒 Pedidos Auto</a></li>
+            <li><a href="#marketing">📢 Marketing IA & Club</a></li>
+            <li><a href="#">📦 Inventario</a></li>
+            <li><a href="#">👥 Pacientes</a></li>
+            <li><a href="#">⚙️ Configuración</a></li>
+        </ul>
+        <div class="user-info"
+            style="margin-top: auto; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+            <p style="font-size: 0.9rem;">Dr. López Asiain</p>
+            <p style="font-size: 0.75rem; color: rgba(255,255,255,0.5);">Farmacéutico Titular</p>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="header-bar">
+            <div class="welcome-text">
+                <h1>Panel de Gestión <span style="font-size: 1rem; color: var(--accent); vertical-align: middle;">•
+                        Live</span></h1>
+            </div>
+            <div class="header-actions">
+                <button class="btn-primary"
+                    style="padding: 10px 20px; background: var(--primary); color: white; border: none; border-radius: 8px; cursor: pointer;">+
+                    Nueva Fórmula</button>
+            </div>
+        </header>
+
+        <section class="kpi-grid">
+            <div class="kpi-card">
+                <span class="label">Ventas Hoy</span>
+                <span class="value">1.240,50€</span>
+                <span class="trend up">↑ 12% vs ayer</span>
+            </div>
+            <div class="kpi-card">
+                <span class="label">Fórmulas Pendientes</span>
+                <span class="value">8</span>
+                <span class="trend down">↓ 2 completadas</span>
+            </div>
+            <div class="kpi-card">
+                <span class="label">Stock Bajo</span>
+                <span class="value">14</span>
+                <span class="trend" style="color: var(--warning);">⚠️ Revisión necesaria</span>
+            </div>
+            <div class="kpi-card">
+                <span class="label">Consultas Génesis-Voice</span>
+                <span class="value">24</span>
+                <span class="trend up">↑ 5 hoy</span>
+            </div>
+        </section>
+
+        <section class="kpi-grid" style="grid-template-columns: 1fr;">
+            <div class="data-section">
+                <h2>📅 Calendario de Citas</h2>
+                <div style="display: flex; gap: 20px;">
+                    <div style="flex: 1; border: 1px solid #eee; border-radius: 8px; padding: 15px;">
+                        <p style="font-weight: 600; margin-bottom: 10px; color: var(--primary);">Hoy, 1 Febrero</p>
+                        <div
+                            style="padding: 10px; background: #e8f5e9; border-left: 4px solid var(--accent); border-radius: 4px; margin-bottom: 10px;">
+                            <strong>17:00 - María García López</strong>
+                            <p style="font-size: 0.8rem;">Consulta nutricional (Agendado vía IA)</p>
+                        </div>
+                        <div
+                            style="padding: 10px; background: #fff3e0; border-left: 4px solid var(--warning); border-radius: 4px;">
+                            <strong>18:30 - Juan Rodríguez Pérez</strong>
+                            <p style="font-size: 0.8rem;">Duda medicación crónica (Vía Web)</p>
+                        </div>
+                    </div>
+                    <div style="flex: 1; border: 1px solid #eee; border-radius: 8px; padding: 15px;">
+                        <p style="font-weight: 600; margin-bottom: 10px;">Mañana, 2 Febrero</p>
+                        <p style="font-size: 0.85rem; color: #888;">No hay citas agendadas aún.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pedidos" class="data-section" style="margin-top: 40px;">
+            <h2>🛒 Pedidos Automáticos (Auto-Refill IA)</h2>
+            <p style="font-size: 0.85rem; color: #666; margin-bottom: 20px;">Pedidos generados automáticamente basados
+                en umbrales de stock mínimo/máximo.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cant. a Pedir</th>
+                        <th>Estado</th>
+                        <th>Total Est.</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Amoxicilina 500mg</td>
+                        <td>38 uds.</td>
+                        <td><span
+                                style="background: #fff3cd; color: #856404; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem;">PENDIENTE</span>
+                        </td>
+                        <td>144,40 €</td>
+                        <td><button
+                                style="padding: 5px 10px; border-radius: 6px; border: none; background: var(--primary); color: white; cursor: pointer;">Aprobar</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ventolin Inhalador</td>
+                        <td>42 uds.</td>
+                        <td><span
+                                style="background: #fff3cd; color: #856404; padding: 4px 8px; border-radius: 4px; font-size: 0.75rem;">PENDIENTE</span>
+                        </td>
+                        <td>367,50 €</td>
+                        <td><button
+                                style="padding: 5px 10px; border-radius: 6px; border: none; background: var(--primary); color: white; cursor: pointer;">Aprobar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="marketing" class="data-section" style="margin-top: 40px;">
+            <h2>📢 Marketing IA & Fidelización</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                <div style="padding: 20px; border: 1px solid #eee; border-radius: 12px;">
+                    <h3>🎂 Cumpleaños Próximos</h3>
+                    <p style="font-size: 0.85rem; color: #666; margin-bottom: 15px;">Pacientes que cumplen años esta
+                        semana (Aviso enviado automáticamente).</p>
+                    <ul style="list-style: none;">
+                        <li
+                            style="padding: 10px 0; border-bottom: 1px solid #f9f9f9; display: flex; justify-content: space-between;">
+                            <span>María García López</span>
+                            <span style="color: var(--accent); font-weight: 600;">HOY 🎉</span>
+                        </li>
+                        <li style="padding: 10px 0; display: flex; justify-content: space-between; opacity: 0.6;">
+                            <span>Roberto Sanz</span>
+                            <span>04 Feb</span>
+                        </li>
+                    </ul>
+                </div>
+                <div style="padding: 20px; border: 1px solid #eee; border-radius: 12px; background: #f0f4f3;">
+                    <h3>✨ Campaña Activa: "Salud Solar"</h3>
+                    <p style="font-size: 0.85rem; color: #666;">Promoción de fotoprotección para el nivel Oro.</p>
+                    <div
+                        style="margin-top: 15px; background: white; padding: 10px; border-radius: 8px; font-size: 0.8rem;">
+                        <strong>Impacto IA:</strong> <span id="marketing-impact-count">0</span> conversiones hoy (<span
+                            id="marketing-impact-euros">+0€</span> ventas)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="data-section">
+            <h2>Fórmulas Magistrales en Proceso</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Paciente</th>
+                        <th>Fórmula</th>
+                        <th>Preparación</th>
+                        <th>Estado</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <!-- Dinámico -->
+                    <tr>
+                        <td>María García López</td>
+                        <td>Crema Dermatológica MGL</td>
+                        <td>01 Feb 2026</td>
+                        <td><span class="status en_preparacion">En Preparación</span></td>
+                        <td><button class="btn-icon">👁️</button></td>
+                    </tr>
+                    <tr>
+                        <td>Juan Rodríguez Pérez</td>
+                        <td>Jarabe Pediátrico Sin Azúcar</td>
+                        <td>01 Feb 2026</td>
+                        <td><span class="status validada">Validada</span></td>
+                        <td><button class="btn-icon">👁️</button></td>
+                    </tr>
+                    <tr>
+                        <td>Carmen Martínez Soler</td>
+                        <td>Cápsulas Personalizadas Biotina</td>
+                        <td>31 Ene 2026</td>
+                        <td><span class="status entregada">Entregada</span></td>
+                        <td><button class="btn-icon">👁️</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="marketing_engine.js"></script>
+    <script src="dashboard_script.js"></script>
+</body>
+
+</html>

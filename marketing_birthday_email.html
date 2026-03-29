@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+            color: #0a5c4a;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid #eee;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: #0a5c4a;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .content {
+            padding: 40px;
+            line-height: 1.6;
+        }
+
+        .gift-box {
+            background: #f0f4f3;
+            border: 2px dashed #2ecc71;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .footer {
+            background: #f8faf9;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .btn {
+            background: #2ecc71;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 style="margin: 0;">¡Feliz Cumpleaños!</h1>
+            <p>De parte de todo el equipo de López Asiain Castaño</p>
+        </div>
+        <div class="content">
+            <p>Hola <strong>{{nombre_paciente}}</strong>,</p>
+            <p>En este día tan especial, queremos agradecerte la confianza depositada en nosotros para el cuidado de tu
+                salud.</p>
+            <div class="gift-box">
+                <p style="font-size: 1.2rem; margin-bottom: 10px;">🎁 Tu Regalo de Cumpleaños</p>
+                <h2 style="margin: 0; color: #12826a;">Crema Facial Hidratante UV50</h2>
+                <p>Presenta este email en nuestra farmacia para recoger tu regalo exclusivo.</p>
+                <br>
+                <a href="#" class="btn">Ver en mi App</a>
+            </div>
+            <p>Esperamos verte pronto y seguir cuidando de ti.</p>
+            <p>Atentamente,<br><strong>Dr. López Asiain Castaño</strong></p>
+        </div>
+        <div class="footer">
+            <p>Calle de la Excelencia, 12, Madrid | +34 912 345 678</p>
+            <p>Has recibido este correo por ser miembro del Club Génesis.</p>
+        </div>
+    </div>
+</body>
+
+</html>

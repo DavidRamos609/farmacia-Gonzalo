@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe Estratégico | Farmacia López Asiain</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f4c5c;
+            --secondary: #256d85;
+            --accent: #5da9ad;
+            --highlight: #f8ad1d;
+            --bg: #f4f7f6;
+            --glass: rgba(255, 255, 255, 0.8);
+            --dark: #1a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 100px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section:nth-child(even) {
+            direction: rtl;
+        }
+
+        .section:nth-child(even) .content {
+            direction: ltr;
+        }
+
+        .image-box {
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transition: transform 0.4s ease;
+        }
+
+        .image-box:hover {
+            transform: scale(1.02);
+        }
+
+        .image-box img {
+            width: 100%;
+            display: block;
+            filter: brightness(0.95);
+        }
+
+        .content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid var(--accent);
+        }
+
+        .stat-card .value {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .stat-card .label {
+            font-size: 0.85rem;
+            color: #888;
+            text-transform: uppercase;
+        }
+
+        .benefits-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .benefits-table th,
+        .benefits-table td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .benefits-table th {
+            background-color: var(--primary);
+            color: white;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        .highlight-text {
+            color: var(--highlight);
+            font-weight: 700;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 0;
+            color: #888;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+        }
+
+        @media (max-width: 900px) {
+            .section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .section:nth-child(even) {
+                direction: ltr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <p class="subtitle">Estrategia Digital 2026</p>
+            <h1>Farmacia López Asiain</h1>
+            <p>Análisis de Mercado & Proyección de Impacto</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- SECCIÓN 1: DEMOGRAFÍA -->
+        <div class="section" id="demografia">
+            <div class="image-box">
+                <img src="../../brain/983161c8-0982-4d64-9621-4e447bfb7cbb/demographic_chart_escorial_1769969060900.png"
+                    alt="Tendencia Demográfica">
+            </div>
+            <div class="content">
+                <h2>El Escorial: Un Mercado en Crecimiento</h2>
+                <p>La pirámide poblacional del eje Escorial-San Lorenzo presenta una oportunidad única para la
+                    digitalización proactiva.</p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="value">44,2 años</span>
+                        <span class="label">Edad Media (↑ 1.7%)</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="value">+36.000</span>
+                        <span class="label">Pacientes Potenciales</span>
+                    </div>
+                </div>
+                <p style="margin-top: 20px;">El <span class="highlight-text">83%</span> de la población es adulta, con
+                    una alta tasa de pacientes crónicos que demandan soluciones de autogestión.</p>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 2: COMPETENCIA -->
+        <div class="section" id="competencia">
+            <div class="content">
+                <h2>Liderazgo Estratégico</h2>
+                <p>En un entorno saturado de farmacias tradicionales, la innovación es el único camino hacia el
+                    liderazgo absoluto del sector.</p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="value">Génesis IA</span>
+                        <span class="label">Atención 24/7 (Voz)</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="value">100%</span>
+                        <span class="label">Diferenciación Local</span>
+                    </div>
+                </div>
+                <p style="margin-top: 20px;">Mientras la competencia se limita al despacho físico, Farmacia López Asiain
+                    se posiciona como una <span class="highlight-text">Health-Tech Hub</span>.</p>
+            </div>
+            <div class="image-box">
+                <img src="../../brain/983161c8-0982-4d64-9621-4e447bfb7cbb/competitive_landscape_pharmacy_1769969117767.png"
+                    alt="Paisaje Competitivo">
+            </div>
+        </div>
+
+        <!-- SECCIÓN 3: BENEFICIOS -->
+        <div class="section" id="beneficios">
+            <div class="image-box">
+                <img src="../../brain/983161c8-0982-4d64-9621-4e447bfb7cbb/savings_infographic_pharmacy_1769969085766.png"
+                    alt="Impacto Económico">
+            </div>
+            <div class="content">
+                <h2>Proyección de Resultados</h2>
+                <p>La eficiencia operativa no es un gasto, es la mayor inversión en rentabilidad para el técnico
+                    farmacéutico.</p>
+                <table class="benefits-table">
+                    <thead>
+                        <tr>
+                            <th>KPI</th>
+                            <th>Impacto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Gestión Telefónica</td>
+                            <td class="highlight-text">-30% Tiempo</td>
+                        </tr>
+                        <tr>
+                            <td>Venta Parafarmacia</td>
+                            <td class="highlight-text">+25% Incremento</td>
+                        </tr>
+                        <tr>
+                            <td>Fidelización Club</td>
+                            <td class="highlight-text">+40% Retención</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 SaaS Factory | Exclusivo para Farmacia Gonzalo López Asiain Castaño</p>
+    </footer>
+
+    <script>
+        // Animación de aparición al scroll
+        const sections = document.querySelectorAll('.section');
+        const observerOptions = { threshold: 0.2 };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(s => observer.observe(s));
+    </script>
+</body>
+
+</html>

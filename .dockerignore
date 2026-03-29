@@ -1,0 +1,21 @@
+# Entornos virtuales
+node_modules/
+
+# Git
+.git
+.gitignore
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Desarrollo
+.env
+.env.*
+
+# Archivos grandes y Documentación
+*.pdf
+README.md
+*prompt*.md
+*.sh
+*.sql

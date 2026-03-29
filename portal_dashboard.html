@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Panel | Club Génesis López Asiain</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-portal: #f0f4f3;
+        }
+
+        body {
+            background: var(--bg-portal);
+            padding-top: 80px;
+        }
+
+        .dashboard-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .welcome-header {
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .welcome-header h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+        }
+
+        .loyalty-banner {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            padding: 40px;
+            border-radius: var(--radius);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-strong);
+        }
+
+        .loyalty-info h2 {
+            font-size: 2.5rem;
+            margin: 10px 0;
+        }
+
+        .loyalty-badge {
+            background: var(--accent);
+            color: var(--primary-dark);
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-weight: 700;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-soft);
+            margin-bottom: 30px;
+        }
+
+        .card h3 {
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .prescription-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .prescription-item:last-child {
+            border-bottom: none;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        .status-ready {
+            background: var(--accent);
+            color: var(--primary-dark);
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        .status-wait {
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        .btn-action {
+            width: 100%;
+            border-radius: 12px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="logo-text">López Asiain <span class="highlight">Castaño</span></a>
+            <ul class="nav-links">
+                <li><a href="#">Mi Salud</a></li>
+                <li><a href="#">Citas</a></li>
+                <li><a href="#">Puntos</a></li>
+                <li><a href="index.html" class="btn-primary" style="background: var(--primary-dark);">Cerrar Sesión</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="dashboard-container">
+        <div class="welcome-header">
+            <div>
+                <p style="color: #666; font-weight: 600;">Bienvenida de nuevo,</p>
+                <h1>María García</h1>
+            </div>
+            <div style="text-align: right;">
+                <p style="font-size: 0.9rem; color: #888;">Nº Tarjeta Sanitaria</p>
+                <p style="font-weight: 700;">8001234567</p>
+            </div>
+        </div>
+
+        <section class="loyalty-banner">
+            <div class="loyalty-info">
+                <p>Tus puntos acumulados</p>
+                <h2><span id="user-points">1.500</span> <small style="font-size: 1rem; opacity: 0.7;">Puntos</small>
+                </h2>
+                <div class="loyalty-badge">Nivel Oro 🏆</div>
+            </div>
+            <div style="text-align: right;">
+                <p>Equivale a un descuento de</p>
+                <p style="font-size: 2rem; font-weight: 700;"><span id="user-discount">15,00</span>€</p>
+                <p style="font-size: 0.8rem; margin-top: 10px;">¡Pronto es tu cumpleaños! Tienes un regalo esperando.
+                </p>
+            </div>
+        </section>
+
+        <div class="dashboard-grid">
+            <div class="main-cards">
+                <div class="card">
+                    <h3>💊 Mi Medicación (Tarjeta Sanitaria)</h3>
+                    <div class="prescription-item">
+                        <div>
+                            <strong>Atorvastatina 20mg</strong>
+                            <p style="font-size: 0.85rem; color: #666;">Próxima recogida: 15 Feb 2026</p>
+                        </div>
+                        <span class="status-wait">Pendiente de fecha</span>
+                    </div>
+                    <div class="prescription-item">
+                        <div>
+                            <strong>Omeprazol 20mg</strong>
+                            <p style="font-size: 0.85rem; color: #666;">Cargado hoy por Dr. Martínez</p>
+                        </div>
+                        <span class="status-ready">LISTO PARA RECOGER</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>🧪 Fórmulas Magistrales</h3>
+                    <div class="prescription-item">
+                        <div>
+                            <strong>Crema Dermatológica MGL</strong>
+                            <p style="font-size: 0.85rem; color: #666;">En preparación en nuestro laboratorio</p>
+                        </div>
+                        <span class="status-wait">En proceso...</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="side-cards">
+                <div class="card">
+                    <h3>📅 Mis Citas</h3>
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">No tienes citas programadas
+                        próximamente.</p>
+                    <button class="btn-primary btn-action">Reservar Cita</button>
+                    <p style="font-size: 0.75rem; color: #888; text-align: center; margin-top: 10px;">También puedes
+                        pedir cita llamando a Génesis IA</p>
+                </div>
+
+                <div class="card"
+                    style="background: var(--primary-dark); color: white; position: relative; overflow: hidden;">
+                    <h3 style="color: white;">🎁 ¡Regalo de Cumpleaños!</h3>
+                    <p style="font-size: 0.9rem;">Hoy es tu día. Pasa por la farmacia para recoger tu <strong>Crema
+                            Facial UV50</strong> totalmente gratis.</p>
+                    <div
+                        style="position: absolute; top: 10px; right: -10px; font-size: 3rem; opacity: 0.2; transform: rotate(15deg);">
+                        🎂</div>
+                </div>
+
+                <div class="card" style="background: #f8faf9; border-left: 4px solid var(--accent);">
+                    <h3>🔔 Alerta Farmacia</h3>
+                    <p style="font-size: 0.9rem;">Hemos preparado tu <strong>Omeprazol</strong>. Puedes pasar a
+                        recogerlo en cualquier momento sin esperar cola.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="marketing_engine.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Portal del Paciente cargado.');
+
+            // Cargar puntos desde localStorage si existen, si no usar mock
+            let points = parseInt(localStorage.getItem('user_points') || '1500');
+            document.getElementById('user-points').textContent = points.toLocaleString();
+            document.getElementById('user-discount').textContent = (points / 100).toFixed(2);
+
+            // Simulación de interacción: Canje de puntos
+            const btnReserva = document.querySelector('.btn-action');
+            if (btnReserva) {
+                btnReserva.addEventListener('click', () => {
+                    alert('Accediendo al sistema de citas de Génesis-Voice...');
+                    // Simular que el usuario interactúa y esto genera una conversión de marketing
+                    if (window.MarketingEngine) {
+                        window.MarketingEngine.trackConversion('Reserva Cita Portal');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

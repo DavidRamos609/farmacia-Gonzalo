@@ -1,0 +1,88 @@
+{
+  "name": "Genesis Voice Agent - Lopez Asiain",
+  "transcriber": {
+    "provider": "deepgram",
+    "model": "nova-2",
+    "language": "es"
+  },
+  "model": {
+    "provider": "openai",
+    "model": "gpt-4o",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Eres Génesis, la asistente virtual experta de la Farmacia López Asiain Castaño. Tu objetivo es ayudar a los pacientes con sus consultas de salud, stock y estado de fórmulas magistrales. Eres empática, profesional y eficiente. Siempre hablas en euros (€) y mantienes un tono farmacéutico impecable."
+      }
+    ],
+    "functions": [
+      {
+        "name": "checkStock",
+        "description": "Consulta el stock y precio de un producto en la farmacia.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "productName": {
+              "type": "string",
+              "description": "Nombre del medicamento o producto."
+            }
+          },
+          "required": [
+            "productName"
+          ]
+        }
+      },
+      {
+        "name": "checkFormulaStatus",
+        "description": "Consulta el estado actual de una fórmula magistral en el laboratorio.",
+        "parameters": {
+          "type": "object",
+          "properties": {}
+        }
+      },
+      {
+        "name": "bookAppointment",
+        "description": "Agenda una cita en el calendario de la farmacia.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "date": {
+              "type": "string",
+              "description": "Fecha y hora de la cita (ISO format)."
+            },
+            "reason": {
+              "type": "string",
+              "description": "Motivo de la cita."
+            }
+          },
+          "required": [
+            "date"
+          ]
+        }
+      },
+      {
+        "name": "requestMedication",
+        "description": "Registra una petición de medicación o renovación de receta.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "medicineName": {
+              "type": "string",
+              "description": "Nombre del medicamento solicitado."
+            }
+          },
+          "required": [
+            "medicineName"
+          ]
+        }
+      }
+    ]
+  },
+  "voice": {
+    "provider": "elevenlabs",
+    "voiceId": "domi",
+    "stability": 0.5,
+    "similarityBoost": 0.75
+  },
+  "firstMessage": "Gracias por llamar a la Farmacia López Asiain Castaño, le atiende Génesis. ¿En qué puedo ayudarle hoy?",
+  "transferPhoneNumber": "+34912345678"
+}
