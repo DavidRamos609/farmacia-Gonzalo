@@ -1,18 +1,26 @@
-# Dockerfile optimizado para producción - Farmacia López Asiain
 FROM nginx:alpine
 
-# Instalar curl para el healthcheck
-RUN apk add --no-cache curl
-
-# Configurar Nginx para escuchar en puerto 8000
-RUN sed -i 's/listen \(.*\)80;/listen 8000;/' /etc/nginx/conf.d/default.conf
-
-# Copiar la aplicación al servidor Nginx
+# Copiar archivos HTML/JS/CSS al directorio de Nginx
 COPY . /usr/share/nginx/html/
 
-# Exponer el puerto público 8000
+# Configurar Nginx para servir en puerto 8000
+RUN echo 'server { \
+    listen 8000; \
+    server_name _; \
+    root /usr/share/nginx/html; \
+    index index.html; \
+    location / { \
+        try_files $uri $uri/ /index.html; \
+    } \
+    location /health { \
+        return 200 "OK"; \
+        add_header Content-Type text/plain; \
+    } \
+}' > /etc/nginx/conf.d/default.conf
+
 EXPOSE 8000
 
-# Health check con curl y start-period de 60s
 HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
-  CMD curl -f http://localhost:8000/health/ || exit 1
+  CMD wget --quiet --tries=1 --spider http://localhost:8000/health || exit 1
+
+CMD ["nginx", "-g", "daemon off;"]
